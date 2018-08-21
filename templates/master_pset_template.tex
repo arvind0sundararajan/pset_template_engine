@@ -1,0 +1,57 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm, amssymb, enumerate, enumitem, mdframed, bbm, graphicx}
+\allowdisplaybreaks
+
+\usepackage{tabto}
+\NumTabs{20}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\headheight=40pt
+\rfoot{Firstname Lastname | 00000000}
+
+
+\newcommand{\problemtitle}[1]{\textbf{#1}}
+\newcommand{\problem}[1]{#1}
+\newcommand{\solution}[1]{#1}
+
+
+%\newcommand{\answer}[1]{{\color{blue} \smallskip #1}}
+
+\newcommand{\Prob}[1]{\mathbb{P}(#1)}
+\newcommand{\Expec}[1]{\mathbb{E}[#1]}
+\newcommand{\Var}[1]{\text{Var}(#1)}
+
+% CHANGE THESE
+\newcommand{\class}{}
+\newcommand{\classtitle}{}
+\newcommand{\semester}{}
+\newcommand{\prof}{}
+\newcommand{\assignment}{}
+
+\renewcommand{\headrulewidth}{6pt}
+\lhead{ \Large  \fontfamily{lmdh}\selectfont
+\class	\tab \tab \tab \tab \classtitle\\
+\semester	 \tab \tab \prof}
+\rhead{\LARGE 	\fontfamily{lmdh}\selectfont \assignment}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+    \array{#1}}
+\makeatother
+
+\begin{document}
+
+\begin{enumerate}
+	\BLOCK{ for pr in problem_sources }
+	\item \input{\VAR{'../' + pr}}
+	%\clearpage
+	\BLOCK{endfor}
+\end{enumerate}
+
+
+\end{document}
