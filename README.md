@@ -2,17 +2,24 @@
 
 This project contains code to organize practice problems in any subject, from any source.
 
-Functionality is as follows:
+Usage:
 
-* User enters a command to add a new question.
-* Program creates the template files necessary: .tex files for problem body and solution, and metadata file with question information. the title of these files is the question id, which is a simple counter of the ith problem added.
+* `python3 create_problem.py [-h] problem_id` to create a simple source file for a new problem
+* `python3 create_pset.py [-h] pset_title problem_sources [problem_sources ...]` to create a new pset with arbitrary sources
 
 ## Mechanics
 
 An organizational scheme for practice problems.
 
 * The template files
-	* fill in 
+	* fill in following information:
+		* full name, e.g. `Lonzo Ball`
+		* id number
+		* class, e.g. `EECS 126`
+		* class title, e.g. `Probability and Random Processes`
+		* semester, e.g. `Fall 2018`
+		* prof, e.g. `Lavar Ball`
+		* assignment, e.g. `HW 6`
 
 * `create_problem.py`: creates source file for a problem
 	*	inputs: a `problem_id` for the problem (e.g. `126_6_1` for problem 1 on HW 6 of EECS 126)
